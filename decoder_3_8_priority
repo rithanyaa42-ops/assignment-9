@@ -1,0 +1,14 @@
+module decoder_3_8_priority(
+input [2:0] i,
+output [7:0] d);
+
+assign d[7] = 1'b0;
+assign d[6] = 1'b0;
+assign d[5] = 1'b0;
+assign d[4] = i[2];
+assign d[3] = 1'b0;
+assign d[2] = ~i[2] & i[1];
+assign d[1] = ~i[2] & ~i[1] & i[0];
+assign d[0] = ~i[2] & ~i[1] & ~i[0];
+
+endmodule
